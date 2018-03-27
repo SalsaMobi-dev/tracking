@@ -32,7 +32,7 @@ const authorizableProperties = [
   ['location', 'Location'],
   ['temperature', 'Temperature'],
   ['shock', 'Shock'],
-  ['test', 'Test']
+  ['status', 'Status']
 ]
 
 /**
@@ -69,8 +69,29 @@ const AddAssetForm = {
 
         layout.row([
           forms.textInput(setter('type'), 'Standard Carrier Alpha Code (SCAC®)'),
-          forms.textInput(setter('subtype'), 'Mode', false)
+          forms.textInput(setter('subtype'), 'Mode', false),
+          forms.textInput(setter('ataport'), 'ATA Port', false)
         ]),
+
+        layout.row([
+          forms.textInput(setter('acontainer'), 'Container'),
+          forms.textInput(setter('tcontainer'), 'Type of Container', false)
+        ]),
+
+        layout.row([
+          forms.textInput(setter('status'), 'Status'),        
+          forms.textInput(setter('eta'), 'Estimate Time of Arrival (ETA)')
+        ]),
+
+        layout.row([
+          forms.textInput(setter('vessel'), 'Vessel Name'),
+          forms.textInput(setter('voyage'), 'Voyager', false)
+        ]),        
+
+        layout.row([
+          forms.textInput(setter('centerno'), 'Center No.'),
+          forms.textInput(setter('sealno'), 'Seal No.', false)
+        ]),     
 
         forms.group('Weight (kg)', forms.field(setter('weight'), {
           type: 'number',
@@ -95,15 +116,6 @@ const AddAssetForm = {
             required: false
           }))
         ]),
-
-
-
-
-        layout.row([
-          forms.textInput(setter('test'), 'Test', false)
-        ]),
-
-
 
         m('.reporters.form-group',
           m('label', 'Authorize Reporters'),
@@ -183,13 +195,77 @@ const _handleSubmit = (signingKey, state) => {
     })
   }
 
-  if (state.test) {
+  if (state.ataport) {
     properties.push({
-      name: 'test',
-      stringValue: state.test,
+      name: 'ataport',
+      stringValue: state.ataport,
       dataType: payloads.createRecord.enum.STRING
     })
   }
+
+  if (state.acontainer) {
+    properties.push({
+      name: 'acontainer',
+      stringValue: state.acontainer,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.tcontainer) {
+    properties.push({
+      name: 'tcontainer',
+      stringValue: state.tcontainer,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.status) {
+    properties.push({
+      name: 'status',
+      stringValue: state.status,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.eta) {
+    properties.push({
+      name: 'eta',
+      stringValue: state.eta,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.vessel) {
+    properties.push({
+      name: 'vessel',
+      stringValue: state.vessel,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }  
+
+  if (state.voyage) {
+    properties.push({
+      name: 'voyage',
+      stringValue: state.voyage,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.centerno) {
+    properties.push({
+      name: 'centerno',
+      stringValue: state.centerno,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }
+
+  if (state.sealno) {
+    properties.push({
+      name: 'sealno',
+      stringValue: state.sealno,
+      dataType: payloads.createRecord.enum.STRING
+    })
+  }  
 
   if (state.weight) {
     properties.push({

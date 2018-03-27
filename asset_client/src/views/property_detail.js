@@ -80,6 +80,7 @@ const updateSubmitter = state => e => {
     })
 }
 
+
 // Produces an input field particular to the type of data
 const typedInput = state => {
   if (state.property.dataType === 'INT') {

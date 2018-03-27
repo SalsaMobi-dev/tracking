@@ -28,7 +28,39 @@
           "dataType": 2
         },
         {
-          "name": "test",
+          "name": "ataport",
+          "dataType": 1
+        },
+        {
+          "name": "acontainer",
+          "dataType": 1
+        },
+        {
+          "name": "tcontainer",
+          "dataType": 1
+        },
+        {
+          "name": "status",
+          "dataType": 1
+        },
+        {
+          "name": "eta",
+          "dataType": 1
+        },
+        {
+          "name": "vessel",
+          "dataType": 1
+        },
+        {
+          "name": "voyage",
+          "dataType": 1
+        },
+        {
+          "name": "centerno",
+          "dataType": 1
+        },
+        {
+          "name": "sealno",
           "dataType": 1
         }
     ]

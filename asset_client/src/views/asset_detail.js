@@ -40,7 +40,7 @@ const authorizableProperties = [
   ['location', 'Location'],
   ['temperature', 'Temperature'],
   ['shock', 'Shock'],
-  ['test', 'Test']
+  ['status', 'Status']
 ]
 
 const _labelProperty = (label, value) => [
@@ -436,6 +436,23 @@ const AssetDetail = {
                          _formatTimestamp(getLatestPropertyUpdateTime(record)))),
 
         _row(
+          _labelProperty(
+            'Status',
+            _propLink(record, 'status', _formatValueText(record, 'status'))),
+          (isReporter(record, 'status', publicKey) && !record.final
+          ? m(ReportValue,
+            {
+              name: 'status',
+              label: 'Status',
+              record,
+              typeField: 'stringValue',
+              type: payloads.updateProperties.enum.STRING,
+              xform: (x) => x,              
+              onsuccess: () => _loadData(vnode.attrs.recordId, vnode.state)
+            })
+            : null)),                       
+
+        _row(
           _labelProperty('Owner', _agentLink(owner)),
           m(TransferControl, {
             publicKey,
@@ -459,7 +476,23 @@ const AssetDetail = {
 
         _row(
           _labelProperty('Standard Carrier Alpha Code (SCAC®)', getPropertyValue(record, 'type')),
-          _labelProperty('Mode', getPropertyValue(record, 'subtype'))),
+          _labelProperty('Mode', getPropertyValue(record, 'subtype')),
+          _labelProperty('ATA Port', getPropertyValue(record, 'ataport'))),
+
+        _row(
+          _labelProperty('Container', getPropertyValue(record, 'acontainer')),
+          _labelProperty('Type of Container', getPropertyValue(record, 'tcontainer'))),
+
+        _row(
+          _labelProperty('Estimate Time of Arrival', getPropertyValue(record, 'eta'))),
+      
+        _row(
+          _labelProperty('Vessel Name', getPropertyValue(record, 'vessel')),
+          _labelProperty('Voyage', getPropertyValue(record, 'voyage'))),
+         
+        _row(
+          _labelProperty('Center No.', getPropertyValue(record, 'centerno')),
+          _labelProperty('Seal No.', getPropertyValue(record, 'sealno'))),            
 
         _row(
           _labelProperty(
@@ -521,13 +554,6 @@ const AssetDetail = {
             })
            : null)),
         
-
-
-        _row(
-          _labelProperty('Test', getPropertyValue(record, 'test'))),
-
-
-
         _row(m(ReporterControl, {
           record,
           publicKey,
@@ -556,6 +582,15 @@ const _formatValue = (record, propName) => {
   let prop = getPropertyValue(record, propName)
   if (prop) {
     return parsing.stringifyValue(parsing.floatifyValue(prop), '***', propName)
+  } else {
+    return 'N/A'
+  }
+}
+
+const _formatValueText = (record, propName) => {
+  let prop = getPropertyValue(record, propName)
+  if (prop) {
+    return `${prop}`
   } else {
     return 'N/A'
   }
