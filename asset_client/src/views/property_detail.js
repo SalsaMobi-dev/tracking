@@ -74,7 +74,8 @@ const updateSubmitter = state => e => {
       state.update = null
       state.tmp = {}
       property.updates.forEach(update => {
-        update.value = parsing.floatifyValue(update.value)
+ //       update.value = parsing.floatifyValue(update.value)
+        update.value = update.value
       })
       state.property = property
     })
@@ -142,7 +143,8 @@ const PropertyDetailPage = {
       api.get(`records/${vnode.attrs.recordId}/${vnode.attrs.name}`)
         .then(property => {
           property.updates.forEach(update => {
-            update.value = parsing.floatifyValue(update.value)
+//            update.value = parsing.floatifyValue(update.value)
+            update.value = update.value
           })
           vnode.state.property = property
         })
