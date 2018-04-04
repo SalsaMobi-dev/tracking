@@ -74,12 +74,12 @@ const updateSubmitter = state => e => {
       state.update = null
       state.tmp = {}
       property.updates.forEach(update => {
- //       update.value = parsing.floatifyValue(update.value)
-        update.value = update.value
+        update.value = parsing.floatifyValue(update.value)
+        //update.value = update.value
       })
       state.property = property
     })
-}
+  }
 
 
 // Produces an input field particular to the type of data
@@ -139,17 +139,21 @@ const PropertyDetailPage = {
     vnode.state.currentPage = 0
     vnode.state.tmp = {}
 
+
     const refresh = () => {
       api.get(`records/${vnode.attrs.recordId}/${vnode.attrs.name}`)
         .then(property => {
           property.updates.forEach(update => {
-//            update.value = parsing.floatifyValue(update.value)
-            update.value = update.value
+            if (vnode.attrs.name == 'weight' || vnode.attrs.name == 'location' || vnode.attrs.name == 'temperature' || vnode.attrs.name == 'shock' ){
+            update.value = parsing.floatifyValue(update.value)}
+            else {
+            update.value = update.value }
           })
           vnode.state.property = property
         })
         .then(() => { vnode.state.refreshId = setTimeout(refresh, 2000) })
     }
+  
 
     refresh()
   },
