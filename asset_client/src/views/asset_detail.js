@@ -480,7 +480,7 @@ const AssetDetail = {
           _labelProperty('ATA Port', getPropertyValue(record, 'ataport'))),
 
         _row(
-          _labelProperty('Container', getPropertyValue(record, 'acontainer')),
+          _labelProperty('Master (MBL No)', getPropertyValue(record, 'mastermbl')),
           _labelProperty('Type of Container', getPropertyValue(record, 'tcontainer'))),
 
         _row(

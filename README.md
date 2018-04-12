@@ -33,7 +33,7 @@ with it:
 - a **transaction processor** which handles Supply Chain transaction logic
 - a **server** which provides an HTTP/JSON API for Supply Chain actions
 - a **ledger sync** which syncs blockchain data to a local database
-- the **AssetTrack** example client for tracking generic assets
+- the **CoLoadX Eye** example client for tracking generic assets
 - the **FishNet** example client for tracking fish from catch to table
 - a **shell** container with the dependencies to run any commands and scripts
 
@@ -60,7 +60,7 @@ all required components in separate containers. Many of the components will be
 available through HTTP endpoints, including:
 
 - The Supply Chain REST API will be at **http://localhost:8020**
-- AssetTrack will be at **http://localhost:8021**
+- CoLoadX Eye will be at **http://localhost:8021**
 - RethinkDB's admin panel will be available at **http://localhost:8023**
 - Sawtooth's blockchain REST API will be available at **http://localhost:8024**
 

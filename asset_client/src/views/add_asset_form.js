@@ -36,7 +36,7 @@ const authorizableProperties = [
 ]
 
 /**
- * The Form for tracking a new asset.
+ * The Form for tracking a new container.
  */
 const AddAssetForm = {
   oninit (vnode) {
@@ -64,8 +64,8 @@ const AddAssetForm = {
             _handleSubmit(vnode.attrs.signingKey, vnode.state)
           }
         },
-        m('legend', 'Track New Asset'),
-        forms.textInput(setter('serialNumber'), 'Master (MBL No)'),
+        m('legend', 'Track New Container'),
+        forms.textInput(setter('serialNumber'), 'Container Number'),
 
         layout.row([
           forms.textInput(setter('type'), 'Standard Carrier Alpha Code (SCAC®)'),
@@ -74,7 +74,7 @@ const AddAssetForm = {
         ]),
 
         layout.row([
-          forms.textInput(setter('acontainer'), 'Container'),
+          forms.textInput(setter('mastermbl'), 'Master (MBL No)'),
           forms.textInput(setter('tcontainer'), 'Type of Container', false)
         ]),
 
@@ -203,10 +203,10 @@ const _handleSubmit = (signingKey, state) => {
     })
   }
 
-  if (state.acontainer) {
+  if (state.mastermbl) {
     properties.push({
-      name: 'acontainer',
-      stringValue: state.acontainer,
+      name: 'mastermbl',
+      stringValue: state.mastermbl,
       dataType: payloads.createRecord.enum.STRING
     })
   }
