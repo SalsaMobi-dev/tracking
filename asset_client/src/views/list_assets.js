@@ -57,8 +57,8 @@ const AssetList = {
         m('.row.btn-row.mb-2', _controlButtons(vnode, publicKey)),
         m(Table, {
           headers: [
+            'Container Number',
             'Master (MBL No)',
-            'Standard Carrier Alpha Code (SCAC®)',
             'Added',
             'Updated',
             'Updates'
@@ -70,7 +70,7 @@ const AssetList = {
                   m(`a[href=/assets/${rec.recordId}]`, {
                     oncreate: m.route.link
                   }, truncate(rec.recordId, { length: 32 })),
-                  getPropertyValue(rec, 'type'),
+                  getPropertyValue(rec, 'mastermbl'),
                   // This is the "created" time, synthesized from properties
                   // added on the initial create
                   formatTimestamp(getOldestPropertyUpdateTime(rec)),

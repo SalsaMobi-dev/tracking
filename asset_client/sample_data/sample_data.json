@@ -1,18 +1,63 @@
 {
   "records": [
     {
-      "recordId": "7h15-45537-15-br173",
+      "recordId": "TCLU6438918",
       "recordType": "asset",
       "properties": [
           {
             "name": "type",
             "dataType": 1,
-            "stringValue": "Lightbulb"
+            "stringValue": "MOLU"
           },
           {
             "name": "subtype",
             "dataType": 1,
-            "stringValue": "LED"
+            "stringValue": "Door"
+          },
+          {
+            "name": "ataport",
+            "dataType": 1,
+            "stringValue": "USCHS"
+          },
+          {
+            "name": "tcontainer",
+            "dataType": 1,
+            "stringValue": "45G0"
+          },
+          {
+            "name": "status",
+            "dataType": 1,
+            "stringValue": "EE"
+          },
+          {
+            "name": "mastermbl",
+            "dataType": 1,
+            "stringValue": "MOLU12024335845"
+          },
+          {
+            "name": "eta",
+            "dataType": 1,
+            "stringValue": "24-Jul-2018"
+          },
+          {
+            "name": "vessel",
+            "dataType": 1,
+            "stringValue": "DALIAN EXPRESS"
+          },
+          {
+            "name": "voyage",
+            "dataType": 1,
+            "stringValue": "0100"
+          },
+          {
+            "name": "centerno",
+            "dataType": 1,
+            "stringValue": "8894911"
+          },
+          {
+            "name": "sealno",
+            "dataType": 1,
+            "stringValue": "1594911"
           },
           {
             "name": "weight",
@@ -40,18 +85,63 @@
     },
 
     {
-      "recordId": "7h15-45537-f1135",
+      "recordId": "MOTU0793151",
       "recordType": "asset",
       "properties": [
           {
             "name": "type",
             "dataType": 1,
-            "stringValue": "Airliner"
+            "stringValue": "MOLU"
           },
           {
             "name": "subtype",
             "dataType": 1,
-            "stringValue": "Boeing 747"
+            "stringValue": "Door"
+          },
+          {
+            "name": "ataport",
+            "dataType": 1,
+            "stringValue": "USCHS"
+          },
+          {
+            "name": "tcontainer",
+            "dataType": 1,
+            "stringValue": "45G0"
+          },
+          {
+            "name": "status",
+            "dataType": 1,
+            "stringValue": "EE"
+          },
+          {
+            "name": "mastermbl",
+            "dataType": 1,
+            "stringValue": "MOLU12024335845"
+          },
+          {
+            "name": "eta",
+            "dataType": 1,
+            "stringValue": "28-Aug-2018"
+          },
+          {
+            "name": "vessel",
+            "dataType": 1,
+            "stringValue": "DALIAN EXPRESS"
+          },
+          {
+            "name": "voyage",
+            "dataType": 1,
+            "stringValue": "0300"
+          },
+          {
+            "name": "centerno",
+            "dataType": 1,
+            "stringValue": "8394912"
+          },
+          {
+            "name": "sealno",
+            "dataType": 1,
+            "stringValue": "2094921"
           },
           {
             "name": "weight",
@@ -76,18 +166,63 @@
     },
 
     {
-      "recordId": "7h15-45537-15-b357",
+      "recordId": "SEGU4781596",
       "recordType": "asset",
       "properties": [
           {
             "name": "type",
             "dataType": 1,
-            "stringValue": "Coffee"
+            "stringValue": "MOLU"
           },
           {
             "name": "subtype",
             "dataType": 1,
-            "stringValue": "Kona"
+            "stringValue": "Door"
+          },
+          {
+            "name": "ataport",
+            "dataType": 1,
+            "stringValue": "USCHS"
+          },
+          {
+            "name": "tcontainer",
+            "dataType": 1,
+            "stringValue": "45G0"
+          },
+          {
+            "name": "status",
+            "dataType": 1,
+            "stringValue": "EE"
+          },
+          {
+            "name": "mastermbl",
+            "dataType": 1,
+            "stringValue": "MOLU12024520150"
+          },
+          {
+            "name": "eta",
+            "dataType": 1,
+            "stringValue": "04-May-2018"
+          },
+          {
+            "name": "vessel",
+            "dataType": 1,
+            "stringValue": "DALIAN EXPRESS"
+          },
+          {
+            "name": "voyage",
+            "dataType": 1,
+            "stringValue": "0500"
+          },
+          {
+            "name": "centerno",
+            "dataType": 1,
+            "stringValue": "7894923"
+          },
+          {
+            "name": "sealno",
+            "dataType": 1,
+            "stringValue": "1594888"
           },
           {
             "name": "weight",
