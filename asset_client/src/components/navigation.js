@@ -24,7 +24,7 @@ const m = require('mithril')
 const Navbar = {
   view (vnode) {
     return m('nav.navbar.navbar-expand-sm.navbar-dark.bg-dark.mb-5', [
-      m('a.navbar-brand[href="/"]', { oncreate: m.route.link }, 'CoLoadX Eye'),
+      m('a.navbar-brand[href="/"]', { oncreate: m.route.link }, m("img[src='assets/images/logo.png'][alt=''][width='100']")),
       m('button.navbar-toggler', {
         type: 'button',
         'data-toggle': 'collapse',
