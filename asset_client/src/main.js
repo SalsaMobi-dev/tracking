@@ -30,6 +30,7 @@ const AddAssetForm = require('./views/add_asset_form')
 const AgentDetailPage = require('./views/agent_detail')
 const AgentList = require('./views/list_agents')
 const AssetList = require('./views/list_assets')
+const MastersList = require('./views/list_masters')
 const AssetDetail = require('./views/asset_detail')
 const Dashboard = require('./views/dashboard')
 const LoginForm = require('./views/login_form')
@@ -52,6 +53,7 @@ const loggedInNav = () => {
   const links = [
     ['/create', 'Add Container'],
     ['/assets', 'View Containers'],
+    ['/masters', 'View Masters'],
     ['/agents', 'View Users']
   ]
   return m(navigation.Navbar, {}, [
@@ -64,6 +66,7 @@ const loggedInNav = () => {
 const loggedOutNav = () => {
   const links = [
     ['/assets', 'View Containers'],
+    ['/masters', 'View Masters'],
     ['/agents', 'View Users']
   ]
   return m(navigation.Navbar, {}, [
@@ -124,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '/create': resolve(AddAssetForm, true),
     '/assets/:recordId': resolve(AssetDetail),
     '/assets': resolve(AssetList),
+    '/masters': resolve(MastersList),
     '/login': resolve(LoginForm),
     '/logout': { onmatch: logout },
     '/profile': { onmatch: profile },
