@@ -38,7 +38,7 @@ const AssetList = {
         vnode.state.records.sort((a, b) => {
           return getLatestPropertyUpdateTime(b) - getLatestPropertyUpdateTime(a)
         })
-        vnode.state.filteredRecords = vnode.state.records
+        vnode.state.filteredRecords = vnode.state.records;
       })
         .then(() => { vnode.state.refreshId = setTimeout(refresh, 2000) })
     }
@@ -57,8 +57,8 @@ const AssetList = {
         m('.row.btn-row.mb-2', _controlButtons(vnode, publicKey)),
         m(Table, {
           headers: [
-            'Container Number',
             'Master (MBL No)',
+            'Container Number',
             'Added',
             'Updated',
             'Updates'
@@ -66,20 +66,17 @@ const AssetList = {
           rows: vnode.state.filteredRecords.slice(
             vnode.state.currentPage * PAGE_SIZE,
             (vnode.state.currentPage + 1) * PAGE_SIZE)
-                .map((rec) => [
-                  m(`a[href=/assets/${rec.recordId}]`, {
-                    oncreate: m.route.link
-                  }, truncate(rec.recordId, { length: 32 })),
-                  m('a', {
-                    oncreate: m.route.link,
-                    href: '=/assets/' + getPropertyValue(rec, 'mastermbl')
-                  }, getPropertyValue(rec, 'mastermbl')),
-                  // This is the "created" time, synthesized from properties
-                  // added on the initial create
-                  formatTimestamp(getOldestPropertyUpdateTime(rec)),
-                  formatTimestamp(getLatestPropertyUpdateTime(rec)),
-                  countPropertyUpdates(rec)
-                ]),
+            .map((rec) => [
+              m(`a[href=/assets/${rec.recordId}]`, {
+                oncreate: m.route.link
+              }, getPropertyValue(rec, 'mastermbl')),
+              truncate(rec.recordId, { length: 32 }),
+              // This is the "created" time, synthesized from properties
+              // added on the initial create
+              formatTimestamp(getOldestPropertyUpdateTime(rec)),
+              formatTimestamp(getLatestPropertyUpdateTime(rec)),
+              countPropertyUpdates(rec)
+            ]),
           noRowsText: 'No records found'
         })
       )
@@ -107,7 +104,7 @@ const _controlButtons = (vnode, publicKey) => {
             'Custodian': () => filterRecords((record) => record.custodian === publicKey),
             'Reporting': () => filterRecords(
               (record) => record.properties.reduce(
-                (owned, prop) => owned || prop.reporters.indexOf(publicKey) > -1, false))
+                (owned, prop) => owned |z| prop.reporters.indexOf(publicKey) > -1, false))
           },
           initialFilter: 'All'
         })),

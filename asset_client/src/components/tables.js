@@ -27,7 +27,7 @@ const Table = {
 
   view (vnode) {
     return [
-      m('table.table',
+      m('table#myTable.table',
         m('thead',
           m('tr',
             vnode.attrs.headers.map((header) => m('th', header)))),
@@ -73,7 +73,14 @@ const FilterGroup = {
 const PagingButtons = {
   view (vnode) {
     return [
+
+      
       m('.d-flex.justify-content-end',
+
+        m("input", {type: "text", id: "myInput",
+                autofocus: true, placeholder: " Search...", onkeyup: myFunction, oninput: vnode.state.oninput,
+                onblur: vnode.state.doneTyping}),
+
         m('.btn-group', {
           role: 'group',
           'aria-label': 'Paging controls'
