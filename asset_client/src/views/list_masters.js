@@ -70,7 +70,9 @@ const AssetList = {
               m(`a[href=/assets/${rec.recordId}]`, {
                 oncreate: m.route.link
               }, getPropertyValue(rec, 'mastermbl')),
-              truncate(rec.recordId, { length: 32 }),
+              m(`a[href=/assets/${rec.recordId}]`, {
+                oncreate: m.route.link
+              }, truncate(rec.recordId, { length: 32 })),
               // This is the "created" time, synthesized from properties
               // added on the initial create
               formatTimestamp(getOldestPropertyUpdateTime(rec)),

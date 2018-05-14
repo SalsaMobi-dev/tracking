@@ -52,8 +52,8 @@ const Layout = {
 const loggedInNav = () => {
   const links = [
     ['/create', 'Add Container'],
-    ['/assets', 'View Containers'],
-    ['/masters', 'View Masters'],
+    // ['/assets', 'View Containers'],
+    ['/masters', 'Track Shipments']
     ['/agents', 'View Users']
   ]
   return m(navigation.Navbar, {}, [
@@ -65,9 +65,9 @@ const loggedInNav = () => {
 
 const loggedOutNav = () => {
   const links = [
-    ['/assets', 'View Containers'],
-    ['/masters', 'View Masters'],
-    ['/agents', 'View Users']
+    // ['/assets', 'View Containers'],
+    ['/masters', 'Track Shipments']
+    // ['/agents', 'View Users']
   ]
   return m(navigation.Navbar, {}, [
     navigation.links(links),
