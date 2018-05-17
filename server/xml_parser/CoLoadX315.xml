@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EDI>
+    <ID SEQ="1">
+        <KEY>
+            <MBL_NO>NYKSCHITJ8929600</MBL_NO>
+            <CNTR_NO>NYKU5698819</CNTR_NO>
+            <BOOK_NO />
+            <CARGO_TYPE />
+        </KEY>
+        <INFO>
+            <TO />
+            <STATUS_HEADER>
+                <HBL_NO />
+                <SCAC>NYKS</SCAC>
+                <CNTR_NO>NYKU5698819</CNTR_NO>
+                <CNTR_SIZE>40&apos;DRY HC.</CNTR_SIZE>
+                <BOOK_NO />
+                <PO_NO />
+                <SEAL_NO>0915388</SEAL_NO>
+                <VESSEL_CODE />
+                <VESSEL_FLAG />
+                <VESSEL_VOYAGE />
+                <VESSEL_NAME />
+                <STATUS_LOCATION_EVENT_CODE />
+                <TERMINAL_RECEIVE_DATE />
+                <LAST_FREE_DATE />
+                <PORT_OF_LOAD>
+                    <ID SEQ="0">
+                        <LOCATION_NAME>NEW YORK, NY,UNITED STATES</LOCATION_NAME>
+                        <LOCATION_CODE>USNYC</LOCATION_CODE>
+                        <ETD>2017-12-29T21:56:00</ETD>
+                        <ATD>2017-12-29T21:56:00</ATD>
+                        <VESSEL_VOYAGE>0100</VESSEL_VOYAGE>
+                        <VESSEL_NAME>DALIAN EXPRESS</VESSEL_NAME>
+                    </ID>
+                </PORT_OF_LOAD>
+                <PORT_OF_DISCHARGE>
+                    <ID SEQ="0">
+                        <LOCATION_NAME>JEBEL ALI,UNITED ARAB EMIRATES</LOCATION_NAME>
+                        <LOCATION_CODE>AEJEA</LOCATION_CODE>
+                        <ETA>2018-01-30T05:00:00</ETA>
+                        <ATA>PENDING</ATA>
+                        <VESSEL_VOYAGE>0100</VESSEL_VOYAGE>
+                        <VESSEL_NAME>DALIAN EXPRESS</VESSEL_NAME>
+                    </ID>
+                </PORT_OF_DISCHARGE>
+                <RAMP>
+                    <LOCATION_NAME />
+                    <LOCATION_QUALIFIER />
+                    <ETA />
+                    <ATA />
+                </RAMP>
+                <PLACE_OF_DELIVERY>
+                    <LOCATION_NAME />
+                    <LOCATION_QUALIFIER />
+                    <ETA />
+                    <ATA />
+                </PLACE_OF_DELIVERY>
+                <STATUS>
+                    <ID>
+                        <STATUS_CODE>X2</STATUS_CODE>
+                        <STATUS_DATE>2017-12-29T21:56:00</STATUS_DATE>
+                        <STATUS_LOCATION>NEW YORK, NY ,UNITED STATES GCT BAYONNE LP</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USNYC</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>L</STATUS_CODE>
+                        <STATUS_DATE>2017-12-28T23:26:00</STATUS_DATE>
+                        <STATUS_LOCATION>NEW YORK, NY ,UNITED STATES GCT BAYONNE LP</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USNYC</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>I</STATUS_CODE>
+                        <STATUS_DATE>2017-12-21T08:04:00</STATUS_DATE>
+                        <STATUS_LOCATION>NEW YORK, NY ,UNITED STATES GCT BAYONNE LP</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USNYC</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>EE</STATUS_CODE>
+                        <STATUS_DATE>2017-12-18T15:46:00</STATUS_DATE>
+                        <STATUS_LOCATION>NEW YORK, NY ,UNITED STATES GCT BAYONNE LP</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USNYC</STATUS_LOCATION_CODE>
+                    </ID>
+                </STATUS>
+            </STATUS_HEADER>
+        </INFO>
+    </ID>
+    <ID SEQ="2">
+        <KEY>
+            <MBL_NO>NYKSCHITH7397400</MBL_NO>
+            <CNTR_NO>TCLU7938796</CNTR_NO>
+            <BOOK_NO />
+            <CARGO_TYPE />
+        </KEY>
+        <INFO>
+            <TO />
+            <STATUS_HEADER>
+                <HBL_NO />
+                <SCAC>NYKS</SCAC>
+                <CNTR_NO>TCLU7938796</CNTR_NO>
+                <CNTR_SIZE>40&apos;DRY HC.</CNTR_SIZE>
+                <BOOK_NO />
+                <PO_NO />
+                <SEAL_NO>1594911</SEAL_NO>
+                <VESSEL_CODE />
+                <VESSEL_FLAG />
+                <VESSEL_VOYAGE />
+                <VESSEL_NAME />
+                <STATUS_LOCATION_EVENT_CODE />
+                <TERMINAL_RECEIVE_DATE />
+                <LAST_FREE_DATE />
+                <PORT_OF_LOAD>
+                    <ID SEQ="0">
+                        <LOCATION_NAME>SAVANNAH, GA,UNITED STATES</LOCATION_NAME>
+                        <LOCATION_CODE>USSAV</LOCATION_CODE>
+                        <ETD>2017-12-23T15:00:00</ETD>
+                        <ATD>2017-12-23T15:00:00</ATD>
+                        <VESSEL_VOYAGE>0087</VESSEL_VOYAGE>
+                        <VESSEL_NAME>GLEN CANYON BRIDGE</VESSEL_NAME>
+                    </ID>
+                </PORT_OF_LOAD>
+                <PORT_OF_DISCHARGE>
+                    <ID SEQ="0">
+                        <LOCATION_NAME>JEBEL ALI,UNITED ARAB EMIRATES</LOCATION_NAME>
+                        <LOCATION_CODE>AEJEA</LOCATION_CODE>
+                        <ETA>2018-01-18T09:00:00</ETA>
+                        <ATA>PENDING</ATA>
+                        <VESSEL_VOYAGE>0087</VESSEL_VOYAGE>
+                        <VESSEL_NAME>GLEN CANYON BRIDGE</VESSEL_NAME>
+                    </ID>
+                </PORT_OF_DISCHARGE>
+                <RAMP>
+                    <LOCATION_NAME />
+                    <LOCATION_QUALIFIER />
+                    <ETA />
+                    <ATA />
+                </RAMP>
+                <PLACE_OF_DELIVERY>
+                    <LOCATION_NAME />
+                    <LOCATION_QUALIFIER />
+                    <ETA />
+                    <ATA />
+                </PLACE_OF_DELIVERY>
+                <STATUS>
+                    <ID>
+                        <STATUS_CODE>X2</STATUS_CODE>
+                        <STATUS_DATE>2017-12-23T15:00:00</STATUS_DATE>
+                        <STATUS_LOCATION>SAVANNAH, GA ,UNITED STATES GARDEN CITY TERMINAL</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USSAV</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>L</STATUS_CODE>
+                        <STATUS_DATE>2017-12-23T09:51:00</STATUS_DATE>
+                        <STATUS_LOCATION>SAVANNAH, GA ,UNITED STATES GARDEN CITY TERMINAL</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USSAV</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>I</STATUS_CODE>
+                        <STATUS_DATE>2017-12-20T15:56:00</STATUS_DATE>
+                        <STATUS_LOCATION>SAVANNAH, GA ,UNITED STATES GARDEN CITY TERMINAL</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USSAV</STATUS_LOCATION_CODE>
+                    </ID>
+                    <ID>
+                        <STATUS_CODE>EE</STATUS_CODE>
+                        <STATUS_DATE>2017-12-19T13:56:00</STATUS_DATE>
+                        <STATUS_LOCATION>ATLANTA, GA ,UNITED STATES ATL VIRTUAL DEPOT</STATUS_LOCATION>
+                        <STATUS_LOCATION_CODE>USATL</STATUS_LOCATION_CODE>
+                    </ID>
+                </STATUS>
+            </STATUS_HEADER>
+        </INFO>
+    </ID>
+</EDI>

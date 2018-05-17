@@ -21,16 +21,21 @@ const fs = require('fs');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser();
 
-function getStatusList(file_path) {
-  fs.readFile(__dirname + '/' + file_path, function (err, data) {
-    parser.parseString(data, function (err, result) {
-      const status_list = getStatusByKey(result, 'NYKSCHITJ8929600', 'NYKU5698819');
+const getStatusList = () => {
+  const filename = 'CoLoadX315.xml';
+  const file_path = __dirname + '/' + filename;
+  return Promise.resolve()
+    .then(() => {
+      fs.readFile(file_path, function (err, data) {
+        parser.parseString(data, function (err, result) {
+          const status = getStatusByKey(result, 'NYKSCHITJ8929600', 'NYKU5698819');
+          return status;
+        });
+      });
     });
-  });
-
 }
 
-function getStatusByKey(result, mbl_no, cntr_no) {
+const getStatusByKey = (result, mbl_no, cntr_no) => {
   var status_collection = [];
   _.forEach(result['EDI']['ID'], function (value, key) {
     if (mbl_no === value['KEY'][0]['MBL_NO'][0] && cntr_no === value['KEY'][0]['CNTR_NO'][0]) {
@@ -40,3 +45,8 @@ function getStatusByKey(result, mbl_no, cntr_no) {
 
   return status_collection;
 }
+
+module.exports = {
+  getStatusByKey,
+  getStatusList
+};

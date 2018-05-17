@@ -36,12 +36,13 @@ const Dashboard = require('./views/dashboard')
 const LoginForm = require('./views/login_form')
 const PropertyDetailPage = require('./views/property_detail')
 const SignupForm = require('./views/signup_form')
+const ImportStatus = require('./views/import_status');
 
 /**
  * A basic layout component that adds the navbar to the view.
  */
 const Layout = {
-  view (vnode) {
+  view(vnode) {
     return [
       vnode.attrs.navbar,
       m('.content.container', vnode.children)
@@ -132,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     '/logout': { onmatch: logout },
     '/profile': { onmatch: profile },
     '/assets/:recordId/:name': resolve(PropertyDetailPage),
-    '/signup': resolve(SignupForm)
+    '/signup': resolve(SignupForm),
+    '/import': resolve(ImportStatus)
   })
 })

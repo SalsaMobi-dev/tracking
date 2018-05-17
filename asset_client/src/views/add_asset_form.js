@@ -39,7 +39,7 @@ const authorizableProperties = [
  * The Form for tracking a new container.
  */
 const AddAssetForm = {
-  oninit (vnode) {
+  oninit(vnode) {
     // Initialize the empty reporters fields
     vnode.state.reporters = [
       {
@@ -54,7 +54,7 @@ const AddAssetForm = {
       })
   },
 
-  view (vnode) {
+  view(vnode) {
     const setter = forms.stateSetter(vnode.state)
     return [
       m('.add_asset_form',
@@ -64,94 +64,94 @@ const AddAssetForm = {
             _handleSubmit(vnode.attrs.signingKey, vnode.state)
           }
         },
-        m('legend', 'Track New Container'),
-        forms.textInput(setter('serialNumber'), 'Container Number'),
+          m('legend', 'Track Nessw Container'),
+          forms.textInput(setter('serialNumber'), 'Container Number'),
 
-        layout.row([
-          forms.textInput(setter('type'), 'Standard Carrier Alpha Code (SCAC®)'),
-          forms.textInput(setter('subtype'), 'Mode', false),
-          forms.textInput(setter('ataport'), 'ATA Port', false)
-        ]),
+          layout.row([
+            forms.textInput(setter('type'), 'Standard Carrier Alpha Code (SCAC®)'),
+            forms.textInput(setter('subtype'), 'Mode', false),
+            forms.textInput(setter('ataport'), 'ATA Port', false)
+          ]),
 
-        layout.row([
-          forms.textInput(setter('mastermbl'), 'Master (MBL No)'),
-          forms.textInput(setter('tcontainer'), 'Type of Container', false)
-        ]),
+          layout.row([
+            forms.textInput(setter('mastermbl'), 'Master (MBL No)'),
+            forms.textInput(setter('tcontainer'), 'Type of Container', false)
+          ]),
 
-        layout.row([
-          forms.textInput(setter('status'), 'Status'),        
-          forms.textInput(setter('eta'), 'Estimate Time of Arrival (ETA)')
-        ]),
+          layout.row([
+            forms.textInput(setter('status'), 'Status'),
+            forms.textInput(setter('eta'), 'Estimate Time of Arrival (ETA)')
+          ]),
 
-        layout.row([
-          forms.textInput(setter('vessel'), 'Vessel Name'),
-          forms.textInput(setter('voyage'), 'Voyager', false)
-        ]),        
+          layout.row([
+            forms.textInput(setter('vessel'), 'Vessel Name'),
+            forms.textInput(setter('voyage'), 'Voyager', false)
+          ]),
 
-        layout.row([
-          forms.textInput(setter('centerno'), 'Center No.'),
-          forms.textInput(setter('sealno'), 'Seal No.', false)
-        ]),     
+          layout.row([
+            forms.textInput(setter('centerno'), 'Center No.'),
+            forms.textInput(setter('sealno'), 'Seal No.', false)
+          ]),
 
-        forms.group('Weight (kg)', forms.field(setter('weight'), {
-          type: 'number',
-          step: 'any',
-          min: 0,
-          required: false
-        })),
-
-        layout.row([
-          forms.group('Latitude', forms.field(setter('latitude'), {
+          forms.group('Weight (kg)', forms.field(setter('weight'), {
             type: 'number',
             step: 'any',
-            min: -90,
-            max: 90,
+            min: 0,
             required: false
           })),
-          forms.group('Longitude', forms.field(setter('longitude'), {
-            type: 'number',
-            step: 'any',
-            min: -180,
-            max: 180,
-            required: false
-          }))
-        ]),
 
-        m('.reporters.form-group',
-          m('label', 'Authorize Reporters'),
-          vnode.state.reporters.map((reporter, i) =>
-            m('.row.mb-2',
-              m('.col-sm-8',
-                m('input.form-control', {
-                  type: 'text',
-                  placeholder: 'Add reporter by name or public key...',
-                  oninput: m.withAttr('value', (value) => {
-                    // clear any previously matched values
-                    vnode.state.reporters[i].reporterKey = null
-                    const reporter = vnode.state.agents.find(agent => {
-                      return agent.name === value || agent.key === value
-                    })
-                    if (reporter) {
-                      vnode.state.reporters[i].reporterKey = reporter.key
+          layout.row([
+            forms.group('Latitude', forms.field(setter('latitude'), {
+              type: 'number',
+              step: 'any',
+              min: -90,
+              max: 90,
+              required: false
+            })),
+            forms.group('Longitude', forms.field(setter('longitude'), {
+              type: 'number',
+              step: 'any',
+              min: -180,
+              max: 180,
+              required: false
+            }))
+          ]),
+
+          m('.reporters.form-group',
+            m('label', 'Authorize Reporters'),
+            vnode.state.reporters.map((reporter, i) =>
+              m('.row.mb-2',
+                m('.col-sm-8',
+                  m('input.form-control', {
+                    type: 'text',
+                    placeholder: 'Add reporter by name or public key...',
+                    oninput: m.withAttr('value', (value) => {
+                      // clear any previously matched values
+                      vnode.state.reporters[i].reporterKey = null
+                      const reporter = vnode.state.agents.find(agent => {
+                        return agent.name === value || agent.key === value
+                      })
+                      if (reporter) {
+                        vnode.state.reporters[i].reporterKey = reporter.key
+                      }
+                    }),
+                    onblur: () => _updateReporters(vnode, i)
+                  })),
+
+                m('.col-sm-4',
+                  m(forms.MultiSelect, {
+                    label: 'Select Fields',
+                    options: authorizableProperties,
+                    selected: reporter.properties,
+                    onchange: (selection) => {
+                      vnode.state.reporters[i].properties = selection
                     }
-                  }),
-                  onblur: () => _updateReporters(vnode, i)
-                })),
+                  }))))),
 
-             m('.col-sm-4',
-                m(forms.MultiSelect, {
-                  label: 'Select Fields',
-                  options: authorizableProperties,
-                  selected: reporter.properties,
-                  onchange: (selection) => {
-                    vnode.state.reporters[i].properties = selection
-                  }
-                }))))),
-
-        m('.row.justify-content-end.align-items-end',
-          m('col-2',
-            m('button.btn.btn-primary',
-              'Create Record')))))
+          m('.row.justify-content-end.align-items-end',
+            m('col-2',
+              m('button.btn.btn-primary',
+                'Create Record')))))
     ]
   }
 }
@@ -241,7 +241,7 @@ const _handleSubmit = (signingKey, state) => {
       stringValue: state.vessel,
       dataType: payloads.createRecord.enum.STRING
     })
-  }  
+  }
 
   if (state.voyage) {
     properties.push({
@@ -265,7 +265,7 @@ const _handleSubmit = (signingKey, state) => {
       stringValue: state.sealno,
       dataType: payloads.createRecord.enum.STRING
     })
-  }  
+  }
 
   if (state.weight) {
     properties.push({

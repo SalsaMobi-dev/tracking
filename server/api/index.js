@@ -28,6 +28,7 @@ const records = require('./records')
 const blockchain = require('../blockchain/')
 const batcher = require('../blockchain/batcher')
 const config = require('../system/config')
+const xmlParser = require('../xml_parser');
 
 const router = express.Router()
 
@@ -180,6 +181,8 @@ router.get('/records', handle(records.listRecords))
 router.get('/records/:recordId', handle(records.fetchRecord))
 router.get('/records/:recordId/property/:propertyName', handle(records.fetchProperty))
 router.get('/records/:recordId/:propertyName', handle(records.fetchProperty))
+
+router.get('/import', handle(xmlParser.getStatusList));
 
 router.post('/transactions', handleBody(blockchain.submit))
 
